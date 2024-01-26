@@ -1,8 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
+import styled from 'styled-components'
 import './App.css';
 
 function App() {
+  const Text = styled.div`
+    background-color: #000;
+  `
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +22,7 @@ function App() {
         >
           Learn React
         </a>
+        <Text>hello</Text>
       </header>
     </div>
   );
