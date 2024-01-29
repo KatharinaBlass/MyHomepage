@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import profile from './profile.jpg'
 import BackgroundSVGDark from './background-dark.svg'
+import ProfileSVG from './profile.svg'
 import './App.css'
 
 const AppContent = styled.div`
@@ -10,46 +10,54 @@ const AppContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #040d21;
-  background-image: url(${BackgroundSVGDark});
-  background-size: cover;
+  background-color: #f8f8fa;
 `
 const Profile = styled.img`
-  height: 60vh;
-  border-radius: 50%;
-  border: 0.25rem solid #33a8c5;
-  padding: 1%;
-  margin-right: 4%;
+  height: 70vh;
+  max-width: 50%;
+  margin-left: 3%;
 `
 const TextContainer = styled.div`
-  max-width: 40%;
-  color: white;
+  max-width: 800px;
+  color: #111111;
 `
-const NameText = styled.h1`
+const IntroText = styled.h1`
   font-size: 4rem;
   font-weight: bold;
+  margin-bottom: 0.2rem;
 `
-const ProfessionText = styled.h2`
-  font-size: 2rem;
+const NameText = styled.span`
+  font-size: 4rem;
   font-weight: bold;
+  display: inline-block;
+  margin-left: 1.75rem;
+  color: #33a8c5;
+`
+const ProfessionText = styled.span`
+  display: block;
 `
 const ProfileText = styled.p`
-  font-size: 1.25rem;
+  font-size: 1.2rem;
+  line-height: 180%;
+  max-width: 600px;
 `
 
 function App() {
   return (
     <AppContent>
-      <Profile src={profile} alt="That is me smiling at you" />
       <TextContainer>
-        <NameText>Hi, I'm Katharina</NameText>
-        <ProfessionText>A Frontend Developer</ProfessionText>
+        <IntroText>
+          Hi, I'm
+          <NameText>Katharina</NameText>
+          <ProfessionText>A Frontend Developer</ProfessionText>
+        </IntroText>
         <ProfileText>
           I love building modern front-end and mobile applications with fun and
           curiosity. My passion for UX design and accessibility ensures that the
           products I create are intuitive and accessible to all.
         </ProfileText>
       </TextContainer>
+      <Profile src={ProfileSVG} alt="That is me smiling at you" />
     </AppContent>
   )
 }
