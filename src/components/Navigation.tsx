@@ -11,7 +11,7 @@ const NavigationContainer = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  padding: 1.5% 0;
+  padding: 1rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,11 +23,19 @@ const NavigationContainer = styled.div`
       backdrop-filter: blur(10px);
     }
   }
+
+  @media (max-width: 450px) {
+    display: none;
+  }
 `
 const NavigationItem = styled.a<{ $isActive: boolean }>`
-  margin: 0 1%;
+  margin: 0 0.5rem;
   text-decoration: none;
   color: ${(props) => (props.$isActive ? '#33a8c5' : 'black')};
+
+  @media (min-width: 900px) {
+    margin: 0 1%;
+  }
 `
 
 export default function Navigation({ items }: { items: NavigationItemData[] }) {

@@ -6,27 +6,51 @@ const HomeContent = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
+  flex-direction: column-reverse;
+  padding: 4% 0;
+
+  @media (min-width: 900px) {
+    flex-direction: row;
+  }
 `
 const Profile = styled.img`
-  height: 70vh;
-  max-width: 50%;
-  margin-left: 3%;
+  max-width: 500px;
+  width: 100%;
+  max-height: 40%;
+
+  @media (min-width: 900px) {
+    height: 70vh;
+    max-width: 50%;
+    margin-left: 3%;
+  }
 `
 const TextContainer = styled.div`
   max-width: 800px;
   color: #111111;
 `
-const IntroText = styled.h1`
-  font-size: 4rem;
+const Headline = styled.span`
+  font-size: 2rem;
   font-weight: bold;
+
+  @media (min-width: 450px) {
+    font-size: 4rem;
+  }
+`
+const IntroText = styled.h1`
   margin-bottom: 0.2rem;
 `
-const NameText = styled.span`
-  display: inline-block;
-  margin-left: 1.75rem;
-  color: #33a8c5;
+const HelloText = styled(Headline)`
+  margin-right: 1rem;
+
+  @media (min-width: 450px) {
+    margin-right: 1.75rem;
+  }
 `
-const ProfessionText = styled.span`
+const NameText = styled(Headline)`
+  color: #33a8c5;
+  display: inline-block;
+`
+const ProfessionText = styled(Headline)`
   display: block;
 `
 const ProfileText = styled.p`
@@ -40,7 +64,7 @@ export default function Home({ id }: { id: string }) {
     <HomeContent id={id}>
       <TextContainer>
         <IntroText>
-          Hi, I'm
+          <HelloText>Hi, I'm</HelloText>
           <NameText>Katharina</NameText>
           <ProfessionText>A Frontend Developer</ProfessionText>
         </IntroText>
