@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import BackgroundSVGDark from './background-dark.svg'
 import ProfileSVG from './profile.svg'
 import './App.css'
 
@@ -27,8 +26,6 @@ const IntroText = styled.h1`
   margin-bottom: 0.2rem;
 `
 const NameText = styled.span`
-  font-size: 4rem;
-  font-weight: bold;
   display: inline-block;
   margin-left: 1.75rem;
   color: #33a8c5;
