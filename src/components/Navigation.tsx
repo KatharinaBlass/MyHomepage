@@ -15,7 +15,14 @@ const NavigationContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f8f8fa;
+
+  @supports (backdrop-filter: blur(10px)) or
+    (--webkit-backdrop-filter: blur(10px)) {
+    & {
+      background-color: #f8f8fadd;
+      backdrop-filter: blur(10px);
+    }
+  }
 `
 const NavigationItem = styled.a<{ $isActive: boolean }>`
   margin: 0 1%;
