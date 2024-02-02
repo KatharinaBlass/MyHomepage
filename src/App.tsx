@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import ProfileSVG from './profile.svg'
 import './App.css'
+import Navigation, { NavigationItemData } from './components/Navigation'
 
 const AppContent = styled.div`
   padding: 4%;
@@ -40,22 +41,44 @@ const ProfileText = styled.p`
 `
 
 function App() {
+  const navItems: NavigationItemData[] = [
+    {
+      title: 'Home',
+      link: 'blank',
+    },
+    {
+      title: 'Education',
+      link: 'blank',
+    },
+    {
+      title: 'Projects',
+      link: 'blank',
+    },
+    {
+      title: 'Work experience',
+      link: 'blank',
+    },
+  ]
+
   return (
-    <AppContent>
-      <TextContainer>
-        <IntroText>
-          Hi, I'm
-          <NameText>Katharina</NameText>
-          <ProfessionText>A Frontend Developer</ProfessionText>
-        </IntroText>
-        <ProfileText>
-          I love building modern front-end and mobile applications with fun and
-          curiosity. My passion for UX design and accessibility ensures that the
-          products I create are intuitive and accessible to all.
-        </ProfileText>
-      </TextContainer>
-      <Profile src={ProfileSVG} alt="That is me smiling at you" />
-    </AppContent>
+    <>
+      <Navigation items={navItems} />
+      <AppContent>
+        <TextContainer>
+          <IntroText>
+            Hi, I'm
+            <NameText>Katharina</NameText>
+            <ProfessionText>A Frontend Developer</ProfessionText>
+          </IntroText>
+          <ProfileText>
+            I love building modern front-end and mobile applications with fun
+            and curiosity. My passion for UX design and accessibility ensures
+            that the products I create are intuitive and accessible to all.
+          </ProfileText>
+        </TextContainer>
+        <Profile src={ProfileSVG} alt="That is me smiling at you" />
+      </AppContent>
+    </>
   )
 }
 
