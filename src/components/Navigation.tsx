@@ -45,6 +45,7 @@ export default function Navigation({ items }: { items: NavigationItemData[] }) {
     <NavigationContainer>
       {items.map((i) => (
         <NavigationItem
+          key={i.id}
           href={'#' + i.id}
           $isActive={currentItem === i.title}
           onClick={() => setCurrentItem(i.title)}
