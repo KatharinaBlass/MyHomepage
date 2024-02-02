@@ -20,8 +20,10 @@ const Profile = styled.img`
 
   @media (min-width: 900px) {
     height: 70vh;
-    max-width: 50%;
-    margin-left: 3%;
+    width: 50%;
+    max-width: 900px;
+    margin-left: 4%;
+    max-height: unset;
   }
 `
 const TextContainer = styled.div`
