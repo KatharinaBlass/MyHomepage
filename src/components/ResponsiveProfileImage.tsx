@@ -10,16 +10,15 @@ const Profile = styled.picture`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: '100%';
-  max-height: '40%';
-  max-width: '500px';
+  max-width: 600px;
+  max-height: 60%;
 
   @media (min-width: 900px) {
-    height: 70vh;
-    width: 50%;
+    min-width: 50%;
+    height: 85%;
+    max-height: 800px;
     max-width: 900px;
-    margin-left: 4%;
-    max-height: unset;
+    padding-left: 4%;
   }
 `
 

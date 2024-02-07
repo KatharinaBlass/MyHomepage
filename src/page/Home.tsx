@@ -4,13 +4,14 @@ import ResponsiveProfileImage from '../components/ResponsiveProfileImage'
 const HomeContent = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   height: 100vh;
   flex-direction: column-reverse;
   padding: 4% 0;
 
   @media (min-width: 900px) {
     flex-direction: row;
+    justify-content: center;
   }
 `
 const TextContainer = styled.div`
@@ -21,8 +22,8 @@ const Headline = styled.span`
   font-size: 2rem;
   font-weight: bold;
 
-  @media (min-width: 450px) {
-    font-size: 4rem;
+  @media (min-width: 900px) {
+    font-size: 3.5rem;
   }
 `
 const IntroText = styled.h1`
@@ -31,7 +32,7 @@ const IntroText = styled.h1`
 const HelloText = styled(Headline)`
   margin-right: 1rem;
 
-  @media (min-width: 450px) {
+  @media (min-width: 900px) {
     margin-right: 1.75rem;
   }
 `
