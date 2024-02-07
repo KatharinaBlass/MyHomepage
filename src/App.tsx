@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 import './App.css'
-import Navigation, { NavigationItemData } from './components/Navigation'
-import Home from './components/Home'
-import Education from './components/Education'
-import Projects from './components/Projects'
-import Work from './components/Work'
-import Footer from './components/Footer'
+import Navigation, { NavigationItemData } from './page/Navigation'
+import Home from './page/Home'
+import Education from './page/Education'
+import Projects from './page/Projects'
+import Work from './page/Work'
+import Footer from './page/Footer'
 
 const AppContent = styled.div`
   padding: 0 4%;
