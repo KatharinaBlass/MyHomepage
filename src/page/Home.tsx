@@ -1,29 +1,17 @@
 import styled from 'styled-components'
-import ProfileSVG from '../profile.svg'
+import ResponsiveProfileImage from '../components/ResponsiveProfileImage'
 
 const HomeContent = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
+  justify-content: space-evenly;
+  min-height: 100vh;
   flex-direction: column-reverse;
   padding: 4% 0;
 
   @media (min-width: 900px) {
     flex-direction: row;
-  }
-`
-const Profile = styled.img`
-  max-width: 500px;
-  width: 100%;
-  max-height: 40%;
-
-  @media (min-width: 900px) {
-    height: 70vh;
-    width: 50%;
-    max-width: 900px;
-    margin-left: 4%;
-    max-height: unset;
+    justify-content: center;
   }
 `
 const TextContainer = styled.div`
@@ -34,8 +22,8 @@ const Headline = styled.span`
   font-size: 2rem;
   font-weight: bold;
 
-  @media (min-width: 450px) {
-    font-size: 4rem;
+  @media (min-width: 900px) {
+    font-size: 3.5rem;
   }
 `
 const IntroText = styled.h1`
@@ -44,7 +32,7 @@ const IntroText = styled.h1`
 const HelloText = styled(Headline)`
   margin-right: 1rem;
 
-  @media (min-width: 450px) {
+  @media (min-width: 900px) {
     margin-right: 1.75rem;
   }
 `
@@ -76,7 +64,7 @@ export default function Home({ id }: { id: string }) {
           products I create are intuitive and accessible to all.
         </ProfileText>
       </TextContainer>
-      <Profile src={ProfileSVG} alt="That is me smiling at you" />
+      <ResponsiveProfileImage />
     </HomeContent>
   )
 }
