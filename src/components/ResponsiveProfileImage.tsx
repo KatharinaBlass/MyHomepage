@@ -11,14 +11,20 @@ const Profile = styled.picture`
   align-items: center;
   justify-content: center;
   max-width: 600px;
-  max-height: 60%;
+
+  @media (max-height: 500px) {
+    display: none;
+  }
 
   @media (min-width: 900px) {
     min-width: 50%;
-    height: 85%;
-    max-height: 800px;
+    height: 600px;
     max-width: 900px;
     padding-left: 4%;
+  }
+
+  @media (min-width: 1800px) {
+    height: 800px;
   }
 `
 

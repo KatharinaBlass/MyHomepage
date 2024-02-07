@@ -5,7 +5,7 @@ const HomeContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  height: 100vh;
+  min-height: 100vh;
   flex-direction: column-reverse;
   padding: 4% 0;
 
