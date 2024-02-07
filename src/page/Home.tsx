@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import ProfileSVG from '../profile.svg'
+import ResponsiveProfileImage from '../components/ResponsiveProfileImage'
 
 const HomeContent = styled.div`
   display: flex;
@@ -11,19 +11,6 @@ const HomeContent = styled.div`
 
   @media (min-width: 900px) {
     flex-direction: row;
-  }
-`
-const Profile = styled.img`
-  max-width: 500px;
-  width: 100%;
-  max-height: 40%;
-
-  @media (min-width: 900px) {
-    height: 70vh;
-    width: 50%;
-    max-width: 900px;
-    margin-left: 4%;
-    max-height: unset;
   }
 `
 const TextContainer = styled.div`
@@ -76,7 +63,7 @@ export default function Home({ id }: { id: string }) {
           products I create are intuitive and accessible to all.
         </ProfileText>
       </TextContainer>
-      <Profile src={ProfileSVG} alt="That is me smiling at you" />
+      <ResponsiveProfileImage />
     </HomeContent>
   )
 }
