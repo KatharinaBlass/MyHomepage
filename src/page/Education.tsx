@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import EduListItem from '../components/EduListItem'
+import React from 'react'
 
 const EducationContent = styled.div`
   display: flex;
@@ -8,12 +9,11 @@ const EducationContent = styled.div`
   justify-content: center;
   height: 100vh;
 `
-const EduList = styled.ul``
 
 export type Edu = {
   universityName: string
   universityLocation: string
-  degreeType: string
+  degreeType?: string
   studySubject: string
   grade?: number
   start: Date
@@ -47,17 +47,25 @@ const eduCareer: Edu[] = [
     start: new Date(2016, 9, 1),
     end: new Date(2020, 2, 31),
   },
+  {
+    universityName: 'Friedrich-Schiller-Gymnasium',
+    universityLocation: 'Königs Wusterhausen',
+    studySubject: 'A-Levels',
+    grade: 1.0,
+    start: new Date(2010, 7, 1),
+    end: new Date(2016, 5, 25),
+  },
 ]
 
 export default function Education({ id }: { id: string }) {
   return (
     <EducationContent id={id}>
       <h1>Education</h1>
-      <EduList>
+      <div>
         {eduCareer.map((edu) => (
-          <EduListItem {...edu} />
+          <EduListItem {...edu} key={edu.studySubject} />
         ))}
-      </EduList>
+      </div>
     </EducationContent>
   )
 }
