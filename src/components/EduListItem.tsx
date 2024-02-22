@@ -10,14 +10,23 @@ const DateRange = styled.div`
   min-width: 9rem;
   text-align: right;
   align-self: center;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+`
+const MobileDateRange = styled.div`
+  font-size: 0.8rem;
+  @media (min-width: 600px) {
+    display: none;
+  }
 `
 const InfoWrapper = styled.div`
   padding: 1rem 0;
   max-width: 600px;
 `
 const Subject = styled.p`
-  margin-top: 0;
-  margin-bottom: 0.25rem;
+  margin: 0.25rem 0;
   font-weight: 600;
   font-size: 1.2rem;
 `
@@ -29,6 +38,10 @@ const BulletPointContainer = styled.div`
   display: flex;
   align-items: center;
   position: relative;
+
+  @media (max-width: 600px) {
+    margin: 0 2rem 0 1rem;
+  }
 `
 const BulletPoint = styled.span`
   width: 0.8rem;
@@ -69,6 +82,7 @@ export default function EduListItem(props: Edu) {
         <Line />
       </BulletPointContainer>
       <InfoWrapper>
+        <MobileDateRange>{startDate + ' - ' + endDate}</MobileDateRange>
         <Subject>{props.studySubject}</Subject>
         <Details>
           {props.universityName}
