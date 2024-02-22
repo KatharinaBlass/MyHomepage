@@ -6,7 +6,7 @@ export type NavigationItemData = {
   id: string
 }
 
-const NavigationContainer = styled.div`
+const NavigationContainer = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
