@@ -1,59 +1,48 @@
 import styled from 'styled-components'
-import EduListItem from '../components/EduListItem'
-import React from 'react'
+import TimelineItem, { TimelineItemType } from '../components/TimelineItem'
 
 const EducationContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding-top: 2rem;
+  padding-bottom: 5rem;
 `
 
-export type Edu = {
-  universityName: string
-  universityLocation: string
-  degreeType?: string
-  studySubject: string
-  grade?: number
-  start: Date
-  end: Date
-}
-
-const eduCareer: Edu[] = [
+const eduCareer: TimelineItemType[] = [
   {
-    universityName: 'Hochschule für Technik und Wirtschaft Berlin',
-    universityLocation: 'Berlin',
-    degreeType: 'Master of Science',
-    studySubject: 'International Media Informatics',
-    grade: 1.1,
+    organizationName: 'Hochschule für Technik und Wirtschaft Berlin',
+    title: 'International Media Informatics',
     start: new Date(2020, 9, 1),
     end: new Date(2023, 10, 23),
+    degree: 'Master of Science',
+    grade: 1.1,
+    description:
+      "Master's thesis in collaboration with the Fraunhofer Institute on optimising the accessibility of an indoor navigation app with a focus on visually impaired users.",
   },
   {
-    universityName: 'Udacity',
-    universityLocation: 'Online',
-    degreeType: 'Nanodegree',
-    studySubject: 'User Experience Design',
+    organizationName: 'Udacity',
+    title: 'User Experience Design',
     start: new Date(2020, 11, 1),
     end: new Date(2021, 1, 27),
+    degree: 'Nanodegree',
   },
   {
-    universityName: 'Hasso-Plattner-Institut',
-    universityLocation: 'Potsdam',
-    degreeType: 'Bachelor of Science',
-    studySubject: 'IT-Systems Engineering',
-    grade: 1.8,
+    organizationName: 'Hasso-Plattner-Institut',
+    title: 'IT-Systems Engineering',
     start: new Date(2016, 9, 1),
     end: new Date(2020, 2, 31),
+    degree: 'Bachelor of Science',
+    grade: 1.8,
   },
   {
-    universityName: 'Friedrich-Schiller-Gymnasium',
-    universityLocation: 'Königs Wusterhausen',
-    studySubject: 'A-Levels',
-    grade: 1.0,
+    organizationName: 'Friedrich-Schiller-Gymnasium',
+    title: 'A-Levels',
     start: new Date(2010, 7, 1),
     end: new Date(2016, 5, 25),
+    grade: 1.0,
   },
 ]
 
@@ -63,7 +52,7 @@ export default function Education({ id }: { id: string }) {
       <h1>Education</h1>
       <div>
         {eduCareer.map((edu) => (
-          <EduListItem {...edu} key={edu.studySubject} />
+          <TimelineItem {...edu} bulletColor="#33a8c5" key={edu.title} />
         ))}
       </div>
     </EducationContent>

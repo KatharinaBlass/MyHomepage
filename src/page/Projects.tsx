@@ -5,7 +5,8 @@ const ProjectsContent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding-top: 2rem;
 `
 const ComingSoonText = styled.p`
   font-size: 1.2rem;

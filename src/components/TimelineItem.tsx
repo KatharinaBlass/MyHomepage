@@ -1,6 +1,4 @@
 import styled from 'styled-components'
-import { Edu } from '../page/Education'
-import React from 'react'
 
 const ItemLayoutWrapper = styled.div`
   display: flex;
@@ -26,13 +24,17 @@ const InfoWrapper = styled.div`
   padding: 1rem 0;
   max-width: 600px;
 `
-const Subject = styled.p`
+const Title = styled.p`
   margin: 0.25rem 0;
   font-weight: 600;
   font-size: 1.2rem;
 `
-const Details = styled.p`
+const Subtitle = styled.p`
   margin: 0;
+`
+const Description = styled.p`
+  margin-bottom: 0;
+  margin-top: 0.25rem;
 `
 const BulletPointContainer = styled.div`
   margin: 0 2rem;
@@ -44,26 +46,26 @@ const BulletPointContainer = styled.div`
     margin: 0 2rem 0 1rem;
   }
 `
-const BulletPoint = styled.span`
+const BulletPoint = styled.span<{ $accentColor: string }>`
   width: 0.8rem;
   height: 0.8rem;
-  background: #33a8c5;
+  background: ${(props) => props.$accentColor};
   border-radius: 50%;
   z-index: 2;
 `
-const BulletPointShadow = styled.span`
+const BulletPointShadow = styled(BulletPoint)`
   width: 1.4rem;
   height: 1.4rem;
-  background: #bde4ed;
-  border-radius: 50%;
+  opacity: 0.25;
   z-index: 1;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 `
-const Line = styled.span`
-  border: 1px solid #33a8c5;
+const Line = styled.span<{ $accentColor: string }>`
+  border: 1px solid;
+  border-color: ${(props) => props.$accentColor};
   width: 0px;
   height: 100%;
   position: absolute;
@@ -71,25 +73,39 @@ const Line = styled.span`
   transform: translateX(-50%);
 `
 
-export default function EduListItem(props: Edu) {
+export type TimelineItemType = {
+  title: string
+  organizationName: string
+  start: Date
+  end: Date
+  degree?: string
+  grade?: number
+  description?: string
+}
+
+export default function TimelineItem(
+  props: TimelineItemType & { bulletColor: string }
+) {
   const startDate = formatDate(props.start)
   const endDate = formatDate(props.end)
+
   return (
     <ItemLayoutWrapper>
       <DateRange>{startDate + ' - ' + endDate}</DateRange>
       <BulletPointContainer>
-        <BulletPointShadow />
-        <BulletPoint />
-        <Line />
+        <BulletPointShadow $accentColor={props.bulletColor} />
+        <BulletPoint $accentColor={props.bulletColor} />
+        <Line $accentColor={props.bulletColor} />
       </BulletPointContainer>
       <InfoWrapper>
         <MobileDateRange>{startDate + ' - ' + endDate}</MobileDateRange>
-        <Subject>{props.studySubject}</Subject>
-        <Details>
-          {props.universityName}
-          {props.degreeType && <span>, {props.degreeType}</span>}
+        <Title>{props.title}</Title>
+        <Subtitle>
+          {props.organizationName}
+          {props.degree && <span>, {props.degree}</span>}
           {props.grade && <span> - Grade: {props.grade.toFixed(1)}</span>}
-        </Details>
+        </Subtitle>
+        {props.description && <Description>{props.description}</Description>}
       </InfoWrapper>
     </ItemLayoutWrapper>
   )
