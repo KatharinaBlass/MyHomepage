@@ -19,6 +19,8 @@ const eduCareer: TimelineItemType[] = [
     end: new Date(2023, 10, 23),
     degree: 'Master of Science',
     grade: 1.1,
+    description:
+      "Master's thesis in collaboration with the Fraunhofer Institute on optimising the accessibility of an indoor navigation app with a focus on visually impaired users.",
   },
   {
     organizationName: 'Udacity',
