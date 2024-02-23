@@ -1,6 +1,4 @@
 import styled from 'styled-components'
-import { Edu } from '../page/Education'
-import React from 'react'
 
 const ItemLayoutWrapper = styled.div`
   display: flex;
@@ -26,13 +24,17 @@ const InfoWrapper = styled.div`
   padding: 1rem 0;
   max-width: 600px;
 `
-const Subject = styled.p`
+const Title = styled.p`
   margin: 0.25rem 0;
   font-weight: 600;
   font-size: 1.2rem;
 `
-const Details = styled.p`
+const Subtitle = styled.p`
   margin: 0;
+`
+const Description = styled.p`
+  margin-bottom: 0;
+  margin-top: 0.25rem;
 `
 const BulletPointContainer = styled.div`
   margin: 0 2rem;
@@ -71,9 +73,20 @@ const Line = styled.span`
   transform: translateX(-50%);
 `
 
-export default function EduListItem(props: Edu) {
+export type TimelineItemType = {
+  title: string
+  organizationName: string
+  start: Date
+  end: Date
+  degree?: string
+  grade?: number
+  description?: string
+}
+
+export default function TimelineItem(props: TimelineItemType) {
   const startDate = formatDate(props.start)
   const endDate = formatDate(props.end)
+
   return (
     <ItemLayoutWrapper>
       <DateRange>{startDate + ' - ' + endDate}</DateRange>
@@ -84,12 +97,13 @@ export default function EduListItem(props: Edu) {
       </BulletPointContainer>
       <InfoWrapper>
         <MobileDateRange>{startDate + ' - ' + endDate}</MobileDateRange>
-        <Subject>{props.studySubject}</Subject>
-        <Details>
-          {props.universityName}
-          {props.degreeType && <span>, {props.degreeType}</span>}
+        <Title>{props.title}</Title>
+        <Subtitle>
+          {props.organizationName}
+          {props.degree && <span>, {props.degree}</span>}
           {props.grade && <span> - Grade: {props.grade.toFixed(1)}</span>}
-        </Details>
+        </Subtitle>
+        {props.description && <Description>{props.description}</Description>}
       </InfoWrapper>
     </ItemLayoutWrapper>
   )
