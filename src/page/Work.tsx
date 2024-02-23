@@ -42,7 +42,7 @@ export default function Work({ id }: { id: string }) {
       <h1>Work Experience</h1>
       <div>
         {workCareer.map((work) => (
-          <TimelineItem {...work} key={work.title} />
+          <TimelineItem {...work} bulletColor="#243D8D" key={work.title} />
         ))}
       </div>
     </WorkContent>

@@ -48,7 +48,7 @@ export default function Education({ id }: { id: string }) {
       <h1>Education</h1>
       <div>
         {eduCareer.map((edu) => (
-          <TimelineItem {...edu} key={edu.title} />
+          <TimelineItem {...edu} bulletColor="#33a8c5" key={edu.title} />
         ))}
       </div>
     </EducationContent>

@@ -20,10 +20,6 @@ function App() {
       id: 'home',
     },
     {
-      title: 'Education',
-      id: 'edu',
-    },
-    {
       title: 'Projects',
       id: 'projects',
     },
@@ -31,15 +27,19 @@ function App() {
       title: 'Work experience',
       id: 'work',
     },
+    {
+      title: 'Education',
+      id: 'edu',
+    },
   ]
 
   return (
     <AppContent>
       <Navigation items={navItems} />
       <Home id={navItems[0].id} />
-      <Education id={navItems[1].id} />
-      <Projects id={navItems[2].id} />
-      <Work id={navItems[3].id} />
+      <Projects id={navItems[1].id} />
+      <Work id={navItems[2].id} />
+      <Education id={navItems[3].id} />
       <Footer />
     </AppContent>
   )

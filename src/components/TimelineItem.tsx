@@ -46,26 +46,26 @@ const BulletPointContainer = styled.div`
     margin: 0 2rem 0 1rem;
   }
 `
-const BulletPoint = styled.span`
+const BulletPoint = styled.span<{ $accentColor: string }>`
   width: 0.8rem;
   height: 0.8rem;
-  background: #33a8c5;
+  background: ${(props) => props.$accentColor};
   border-radius: 50%;
   z-index: 2;
 `
-const BulletPointShadow = styled.span`
+const BulletPointShadow = styled(BulletPoint)`
   width: 1.4rem;
   height: 1.4rem;
-  background: #bde4ed;
-  border-radius: 50%;
+  opacity: 0.25;
   z-index: 1;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 `
-const Line = styled.span`
-  border: 1px solid #33a8c5;
+const Line = styled.span<{ $accentColor: string }>`
+  border: 1px solid;
+  border-color: ${(props) => props.$accentColor};
   width: 0px;
   height: 100%;
   position: absolute;
@@ -83,7 +83,9 @@ export type TimelineItemType = {
   description?: string
 }
 
-export default function TimelineItem(props: TimelineItemType) {
+export default function TimelineItem(
+  props: TimelineItemType & { bulletColor: string }
+) {
   const startDate = formatDate(props.start)
   const endDate = formatDate(props.end)
 
@@ -91,9 +93,9 @@ export default function TimelineItem(props: TimelineItemType) {
     <ItemLayoutWrapper>
       <DateRange>{startDate + ' - ' + endDate}</DateRange>
       <BulletPointContainer>
-        <BulletPointShadow />
-        <BulletPoint />
-        <Line />
+        <BulletPointShadow $accentColor={props.bulletColor} />
+        <BulletPoint $accentColor={props.bulletColor} />
+        <Line $accentColor={props.bulletColor} />
       </BulletPointContainer>
       <InfoWrapper>
         <MobileDateRange>{startDate + ' - ' + endDate}</MobileDateRange>
