@@ -7,11 +7,14 @@ const HomeContent = styled.div`
   justify-content: space-evenly;
   min-height: 100vh;
   flex-direction: column-reverse;
-  padding: 4% 0;
 
   @media (min-width: 900px) {
     flex-direction: row;
     justify-content: center;
+  }
+
+  @media (min-width: 450px) {
+    padding-top: ${(props) => props.theme.spacings.l};
   }
 `
 const TextContainer = styled.div`
@@ -25,14 +28,11 @@ const Headline = styled.span`
     font-size: ${(props) => props.theme.fontSizes.xxxl};
   }
 `
-const IntroText = styled.h1`
-  margin-bottom: 0.2rem;
-`
 const HelloText = styled(Headline)`
-  margin-right: 1rem;
+  margin-right: 0.8rem;
 
   @media (min-width: 900px) {
-    margin-right: 1.75rem;
+    margin-right: 1.5rem;
   }
 `
 const NameText = styled(Headline)`
@@ -52,11 +52,11 @@ export default function Home({ id }: { id: string }) {
   return (
     <HomeContent id={id}>
       <TextContainer>
-        <IntroText>
+        <h1>
           <HelloText>Hi, I'm</HelloText>
           <NameText>Katharina</NameText>
           <ProfessionText>A Frontend Developer</ProfessionText>
-        </IntroText>
+        </h1>
         <ProfileText>
           I love building modern front-end and mobile applications with fun and
           curiosity. My passion for UX design and accessibility ensures that the

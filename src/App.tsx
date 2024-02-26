@@ -8,10 +8,14 @@ import Footer from './page/Footer'
 import { theme } from './theme'
 
 const AppContent = styled.div`
-  padding: 0 4%;
   background-color: ${(props) => props.theme.colors.background};
   position: relative;
   color: ${(props) => props.theme.colors.text};
+  padding: 0 ${(props) => props.theme.spacings.m};
+
+  @media (min-width: 600px) {
+    padding: 0 ${(props) => props.theme.spacings.l};
+  }
 `
 
 function App() {

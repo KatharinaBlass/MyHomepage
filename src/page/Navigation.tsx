@@ -12,7 +12,7 @@ const NavigationContainer = styled.nav`
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 1rem 0;
+  padding: ${(props) => props.theme.spacings.m} 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,14 +30,10 @@ const NavigationContainer = styled.nav`
   }
 `
 const NavigationItem = styled.a<{ $isActive: boolean }>`
-  margin: 0 0.5rem;
+  padding: 0 ${(props) => props.theme.spacings.m};
   text-decoration: none;
   color: ${(props) =>
     props.$isActive ? props.theme.colors.primary : props.theme.colors.text};
-
-  @media (min-width: 900px) {
-    margin: 0 1%;
-  }
 `
 
 export default function Navigation({ items }: { items: NavigationItemData[] }) {
