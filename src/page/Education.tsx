@@ -1,6 +1,5 @@
 import styled, { useTheme } from 'styled-components'
 import TimelineItem, { TimelineItemType } from '../components/TimelineItem'
-import { theme } from '../theme'
 
 const EducationContent = styled.div`
   display: flex;
@@ -10,6 +9,9 @@ const EducationContent = styled.div`
   min-height: 100vh;
   padding-top: 2rem;
   padding-bottom: 5rem;
+`
+const SectionTitle = styled.h1`
+  font-size: ${(props) => props.theme.fontSizes.xxl};
 `
 
 const eduCareer: TimelineItemType[] = [
@@ -51,7 +53,7 @@ export default function Education({ id }: { id: string }) {
   const theme = useTheme()
   return (
     <EducationContent id={id}>
-      <h1>Education</h1>
+      <SectionTitle>Education</SectionTitle>
       <div>
         {eduCareer.map((edu) => (
           <TimelineItem

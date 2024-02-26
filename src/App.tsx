@@ -11,6 +11,7 @@ const AppContent = styled.div`
   padding: 0 4%;
   background-color: ${(props) => props.theme.colors.background};
   position: relative;
+  color: ${(props) => props.theme.colors.text};
 `
 
 function App() {

@@ -14,8 +14,9 @@ const DateRange = styled.div`
   }
 `
 const MobileDateRange = styled.p`
-  font-size: 0.8rem;
+  font-size: ${(props) => props.theme.fontSizes.s};
   margin: 0;
+
   @media (min-width: 600px) {
     display: none;
   }
@@ -27,7 +28,7 @@ const InfoWrapper = styled.div`
 const Title = styled.p`
   margin: 0.25rem 0;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: ${(props) => props.theme.fontSizes.l};
 `
 const Subtitle = styled.p`
   margin: 0;

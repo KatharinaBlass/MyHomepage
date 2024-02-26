@@ -8,8 +8,11 @@ const ProjectsContent = styled.div`
   min-height: 100vh;
   padding-top: 2rem;
 `
+const SectionTitle = styled.h1`
+  font-size: ${(props) => props.theme.fontSizes.xxl};
+`
 const ComingSoonText = styled.p`
-  font-size: 1.2rem;
+  font-size: ${(props) => props.theme.fontSizes.l};
   line-height: 180%;
   max-width: 600px;
 `
@@ -17,7 +20,7 @@ const ComingSoonText = styled.p`
 export default function Projects({ id }: { id: string }) {
   return (
     <ProjectsContent id={id}>
-      <h1>Projects</h1>
+      <SectionTitle>Projects</SectionTitle>
       <ComingSoonText>Coming soon...</ComingSoonText>
     </ProjectsContent>
   )

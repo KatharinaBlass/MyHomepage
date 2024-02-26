@@ -9,6 +9,9 @@ const WorkContent = styled.div`
   min-height: 100vh;
   padding-top: 2rem;
 `
+const SectionTitle = styled.h1`
+  font-size: ${(props) => props.theme.fontSizes.xxl};
+`
 
 const workCareer: TimelineItemType[] = [
   {
@@ -41,7 +44,7 @@ export default function Work({ id }: { id: string }) {
   const theme = useTheme()
   return (
     <WorkContent id={id}>
-      <h1>Work Experience</h1>
+      <SectionTitle>Work Experience</SectionTitle>
       <div>
         {workCareer.map((work) => (
           <TimelineItem

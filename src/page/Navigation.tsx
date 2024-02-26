@@ -32,7 +32,8 @@ const NavigationContainer = styled.nav`
 const NavigationItem = styled.a<{ $isActive: boolean }>`
   margin: 0 0.5rem;
   text-decoration: none;
-  color: ${(props) => (props.$isActive ? props.theme.colors.primary : 'black')};
+  color: ${(props) =>
+    props.$isActive ? props.theme.colors.primary : props.theme.colors.text};
 
   @media (min-width: 900px) {
     margin: 0 1%;

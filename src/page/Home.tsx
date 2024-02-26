@@ -16,14 +16,13 @@ const HomeContent = styled.div`
 `
 const TextContainer = styled.div`
   max-width: 800px;
-  color: ${(props) => props.theme.colors.text};
 `
 const Headline = styled.span`
-  font-size: 2rem;
+  font-size: ${(props) => props.theme.fontSizes.xxl};
   font-weight: bold;
 
   @media (min-width: 900px) {
-    font-size: 3.5rem;
+    font-size: ${(props) => props.theme.fontSizes.xxxl};
   }
 `
 const IntroText = styled.h1`
@@ -44,8 +43,8 @@ const ProfessionText = styled(Headline)`
   display: block;
 `
 const ProfileText = styled.p`
-  font-size: 1.2rem;
-  line-height: 180%;
+  font-size: ${(props) => props.theme.fontSizes.l};
+  line-height: 1.8;
   max-width: 600px;
 `
 
