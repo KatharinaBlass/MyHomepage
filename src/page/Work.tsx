@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 import TimelineItem, { TimelineItemType } from '../components/TimelineItem'
 
 const WorkContent = styled.div`
@@ -38,12 +38,17 @@ const workCareer: TimelineItemType[] = [
 ]
 
 export default function Work({ id }: { id: string }) {
+  const theme = useTheme()
   return (
     <WorkContent id={id}>
       <h1>Work Experience</h1>
       <div>
         {workCareer.map((work) => (
-          <TimelineItem {...work} bulletColor="#243D8D" key={work.title} />
+          <TimelineItem
+            {...work}
+            bulletColor={theme.colors.primaryDark}
+            key={work.title}
+          />
         ))}
       </div>
     </WorkContent>

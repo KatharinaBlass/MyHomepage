@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import './App.css'
 import Navigation, { NavigationItemData } from './page/Navigation'
 import Home from './page/Home'
@@ -6,10 +6,11 @@ import Education from './page/Education'
 import Projects from './page/Projects'
 import Work from './page/Work'
 import Footer from './page/Footer'
+import { theme } from './theme'
 
 const AppContent = styled.div`
   padding: 0 4%;
-  background-color: #f8f8fa;
+  background-color: ${(props) => props.theme.colors.background};
   position: relative;
 `
 
@@ -34,14 +35,16 @@ function App() {
   ]
 
   return (
-    <AppContent>
-      <Navigation items={navItems} />
-      <Home id={navItems[0].id} />
-      <Projects id={navItems[1].id} />
-      <Work id={navItems[2].id} />
-      <Education id={navItems[3].id} />
-      <Footer />
-    </AppContent>
+    <ThemeProvider theme={theme}>
+      <AppContent>
+        <Navigation items={navItems} />
+        <Home id={navItems[0].id} />
+        <Projects id={navItems[1].id} />
+        <Work id={navItems[2].id} />
+        <Education id={navItems[3].id} />
+        <Footer />
+      </AppContent>
+    </ThemeProvider>
   )
 }
 

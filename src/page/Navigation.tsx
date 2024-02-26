@@ -20,7 +20,7 @@ const NavigationContainer = styled.nav`
   @supports (backdrop-filter: blur(10px)) or
     (--webkit-backdrop-filter: blur(10px)) {
     & {
-      background-color: #f8f8fadd;
+      background-color: ${(props) => props.theme.colors.background_transparent};
       backdrop-filter: blur(10px);
     }
   }
@@ -32,7 +32,7 @@ const NavigationContainer = styled.nav`
 const NavigationItem = styled.a<{ $isActive: boolean }>`
   margin: 0 0.5rem;
   text-decoration: none;
-  color: ${(props) => (props.$isActive ? '#33a8c5' : 'black')};
+  color: ${(props) => (props.$isActive ? props.theme.colors.primary : 'black')};
 
   @media (min-width: 900px) {
     margin: 0 1%;

@@ -16,7 +16,7 @@ const HomeContent = styled.div`
 `
 const TextContainer = styled.div`
   max-width: 800px;
-  color: #111111;
+  color: ${(props) => props.theme.colors.text};
 `
 const Headline = styled.span`
   font-size: 2rem;
@@ -37,7 +37,7 @@ const HelloText = styled(Headline)`
   }
 `
 const NameText = styled(Headline)`
-  color: #33a8c5;
+  color: ${(props) => props.theme.colors.primary};
   display: inline-block;
 `
 const ProfessionText = styled(Headline)`

@@ -1,5 +1,6 @@
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 import TimelineItem, { TimelineItemType } from '../components/TimelineItem'
+import { theme } from '../theme'
 
 const EducationContent = styled.div`
   display: flex;
@@ -47,12 +48,17 @@ const eduCareer: TimelineItemType[] = [
 ]
 
 export default function Education({ id }: { id: string }) {
+  const theme = useTheme()
   return (
     <EducationContent id={id}>
       <h1>Education</h1>
       <div>
         {eduCareer.map((edu) => (
-          <TimelineItem {...edu} bulletColor="#33a8c5" key={edu.title} />
+          <TimelineItem
+            {...edu}
+            bulletColor={theme.colors.primary}
+            key={edu.title}
+          />
         ))}
       </div>
     </EducationContent>
