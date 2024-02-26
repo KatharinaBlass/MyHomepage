@@ -1,5 +1,4 @@
 import styled, { ThemeProvider } from 'styled-components'
-import './App.css'
 import Navigation, { NavigationItemData } from './page/Navigation'
 import Home from './page/Home'
 import Education from './page/Education'
