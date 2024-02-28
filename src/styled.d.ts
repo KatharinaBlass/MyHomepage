@@ -29,6 +29,7 @@ type ThemeFonts = {
 }
 
 type ThemeSpaces = {
+  xs: string
   s: string
   m: string
   l: string

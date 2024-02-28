@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import ProjectCard, { Project } from '../components/ProjectCard'
 
 const ProjectsContent = styled.div`
   display: flex;
@@ -11,17 +12,23 @@ const ProjectsContent = styled.div`
 const SectionTitle = styled.h1`
   font-size: ${(props) => props.theme.fontSizes.xxl};
 `
-const ComingSoonText = styled.p`
-  font-size: ${(props) => props.theme.fontSizes.l};
-  line-height: 1.8;
-  max-width: 600px;
-`
+
+const allProjects: Project[] = [
+  {
+    title: 'Accessible everGuide',
+    description:
+      'Im Rahmen meiner Masterarbeit habe ich in Zusammenarbeit mit dem Fraunhofer Institut eine barrierefreie Version ihrer  Indoor-Navigations-Android-App everGuide entwickelt und mit blinden Nutzern getestet.',
+    techStack: ['Kotlin', 'WCAG 2.2', 'user testing', 'Figma'],
+  },
+]
 
 export default function Projects({ id }: { id: string }) {
   return (
     <ProjectsContent id={id}>
       <SectionTitle>Projects</SectionTitle>
-      <ComingSoonText>Coming soon...</ComingSoonText>
+      {allProjects.map((project) => (
+        <ProjectCard {...project} key={project.title}></ProjectCard>
+      ))}
     </ProjectsContent>
   )
 }

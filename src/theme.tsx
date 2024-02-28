@@ -18,6 +18,7 @@ export const theme: DefaultTheme = {
     xxxl: '3.5rem',
   },
   spacings: {
+    xs: '0.2rem',
     s: '0.5rem',
     m: '1rem',
     l: '2rem',
