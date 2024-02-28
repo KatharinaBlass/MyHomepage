@@ -5,15 +5,18 @@ const FooterContainer = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 0.5rem 0;
+  padding: ${(props) => props.theme.spacings.m} 0;
   display: flex;
   justify-content: center;
+`
+const FooterText = styled.p`
+  margin: 0;
 `
 
 export default function Footer() {
   return (
     <FooterContainer>
-      <p>&copy; 2024 Katharina Blaß</p>
+      <FooterText>&copy; 2024 Katharina Blaß</FooterText>
     </FooterContainer>
   )
 }

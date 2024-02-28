@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 import TimelineItem, { TimelineItemType } from '../components/TimelineItem'
 
 const EducationContent = styled.div`
@@ -7,8 +7,11 @@ const EducationContent = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding-top: 2rem;
-  padding-bottom: 5rem;
+  padding-top: ${(props) => props.theme.spacings.l};
+  padding-bottom: ${(props) => props.theme.spacings.xl};
+`
+const SectionTitle = styled.h1`
+  font-size: ${(props) => props.theme.fontSizes.xxl};
 `
 
 const eduCareer: TimelineItemType[] = [
@@ -47,12 +50,17 @@ const eduCareer: TimelineItemType[] = [
 ]
 
 export default function Education({ id }: { id: string }) {
+  const theme = useTheme()
   return (
     <EducationContent id={id}>
-      <h1>Education</h1>
+      <SectionTitle>Education</SectionTitle>
       <div>
         {eduCareer.map((edu) => (
-          <TimelineItem {...edu} bulletColor="#33a8c5" key={edu.title} />
+          <TimelineItem
+            {...edu}
+            bulletColor={theme.colors.primary}
+            key={edu.title}
+          />
         ))}
       </div>
     </EducationContent>

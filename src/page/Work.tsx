@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 import TimelineItem, { TimelineItemType } from '../components/TimelineItem'
 
 const WorkContent = styled.div`
@@ -7,7 +7,10 @@ const WorkContent = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding-top: 2rem;
+  padding-top: ${(props) => props.theme.spacings.l};
+`
+const SectionTitle = styled.h1`
+  font-size: ${(props) => props.theme.fontSizes.xxl};
 `
 
 const workCareer: TimelineItemType[] = [
@@ -38,12 +41,17 @@ const workCareer: TimelineItemType[] = [
 ]
 
 export default function Work({ id }: { id: string }) {
+  const theme = useTheme()
   return (
     <WorkContent id={id}>
-      <h1>Work Experience</h1>
+      <SectionTitle>Work Experience</SectionTitle>
       <div>
         {workCareer.map((work) => (
-          <TimelineItem {...work} bulletColor="#243D8D" key={work.title} />
+          <TimelineItem
+            {...work}
+            bulletColor={theme.colors.primaryDark}
+            key={work.title}
+          />
         ))}
       </div>
     </WorkContent>

@@ -14,36 +14,38 @@ const DateRange = styled.div`
   }
 `
 const MobileDateRange = styled.p`
-  font-size: 0.8rem;
+  font-size: ${(props) => props.theme.fontSizes.s};
   margin: 0;
+
   @media (min-width: 600px) {
     display: none;
   }
 `
 const InfoWrapper = styled.div`
-  padding: 1rem 0;
+  padding: ${(props) => props.theme.spacings.m} 0;
   max-width: 600px;
 `
 const Title = styled.p`
-  margin: 0.25rem 0;
+  margin: ${(props) => props.theme.spacings.s} 0;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: ${(props) => props.theme.fontSizes.l};
 `
 const Subtitle = styled.p`
   margin: 0;
 `
 const Description = styled.p`
   margin-bottom: 0;
-  margin-top: 0.25rem;
+  margin-top: ${(props) => props.theme.spacings.s};
 `
 const BulletPointContainer = styled.div`
-  margin: 0 2rem;
+  margin: 0 ${(props) => props.theme.spacings.l};
   display: flex;
   align-items: center;
   position: relative;
 
   @media (max-width: 600px) {
-    margin: 0 2rem 0 1rem;
+    margin: 0 ${(props) => props.theme.spacings.l} 0
+      ${(props) => props.theme.spacings.m};
   }
 `
 const BulletPoint = styled.span<{ $accentColor: string }>`
