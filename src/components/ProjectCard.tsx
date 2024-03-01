@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Chip from './Chip'
-import mockImg from '../graphics/profile/profile-450.png'
+import mockImg from '../graphics/projects/PlaceholderImage.png'
 
 export enum ProjectType {
   design = 'Design',
@@ -21,7 +21,7 @@ export type Project = {
 }
 
 const Card = styled.div`
-  padding: ${(props) => `${props.theme.spacings.l} ${props.theme.spacings.m}`};
+  padding: ${(props) => props.theme.spacings.m};
   border: 1px solid ${(props) => props.theme.colors.text};
   border-radius: 8px;
   box-shadow: 6px 6px 0px 0px ${(props) => `${props.theme.colors.primary}55`};
@@ -29,22 +29,22 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   margin: ${(props) => props.theme.spacings.m};
 
   @media (min-width: 600px) {
     flex-direction: row;
-    padding: ${(props) => props.theme.spacings.l};
   }
 `
 const ProjectImage = styled.img`
   max-height: 300px;
   flex: 1;
   margin: 0;
-  margin-bottom: ${(props) => props.theme.spacings.m};
+  margin-bottom: ${(props) => props.theme.spacings.s};
+  max-width: 100%;
 
   @media (min-width: 600px) {
-    max-width: 250px;
+    max-width: 300px;
+    width: 35%;
     margin: 0;
     margin-right: ${(props) => props.theme.spacings.m};
   }
@@ -56,7 +56,8 @@ const TextContainer = styled.div`
 const Title = styled.h2`
   font-size: ${(props) => props.theme.fontSizes.xl};
   font-weight: normal;
-  margin: 0 0 ${(props) => props.theme.spacings.m} 0;
+  margin: ${(props) => props.theme.spacings.s} 0
+    ${(props) => props.theme.spacings.m} 0;
 `
 const Subtitle = styled.p`
   font-size: ${(props) => props.theme.fontSizes.s};
