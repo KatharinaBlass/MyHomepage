@@ -14,7 +14,7 @@ const HomeContent = styled.div`
   }
 
   @media (min-width: 450px) {
-    padding-top: ${(props) => props.theme.spacings.l};
+    padding-top: ${(props) => props.theme.spacings.xl};
   }
 `
 const TextContainer = styled.div`

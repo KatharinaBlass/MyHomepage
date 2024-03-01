@@ -7,7 +7,7 @@ const ProjectsContent = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding-top: ${(props) => props.theme.spacings.l};
+  padding-top: ${(props) => props.theme.spacings.xl};
 `
 const SectionTitle = styled.h1`
   font-size: ${(props) => props.theme.fontSizes.xxl};
@@ -23,6 +23,7 @@ const allProjects: Project[] = [
     techStack: ['Kotlin', 'WCAG 2.2', 'user testing', 'Figma'],
     startDate: new Date(2023, 3, 1),
     endDate: new Date(2023, 10, 23),
+    githubLink: 'https://github.com/KatharinaBlass/MA-code',
   },
 ]
 

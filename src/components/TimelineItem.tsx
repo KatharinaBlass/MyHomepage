@@ -38,13 +38,13 @@ const Description = styled.p`
   margin-top: ${(props) => props.theme.spacings.s};
 `
 const BulletPointContainer = styled.div`
-  margin: 0 ${(props) => props.theme.spacings.l};
+  margin: 0 ${(props) => props.theme.spacings.xl};
   display: flex;
   align-items: center;
   position: relative;
 
   @media (max-width: 600px) {
-    margin: 0 ${(props) => props.theme.spacings.l} 0
+    margin: 0 ${(props) => props.theme.spacings.xl} 0
       ${(props) => props.theme.spacings.m};
   }
 `

@@ -21,7 +21,7 @@ export type Project = {
 }
 
 const Card = styled.div`
-  padding: ${(props) => props.theme.spacings.m};
+  padding: ${(props) => props.theme.spacings.l};
   border: 1px solid ${(props) => props.theme.colors.text};
   border-radius: 8px;
   box-shadow: 6px 6px 0px 0px ${(props) => `${props.theme.colors.primary}55`};
@@ -56,8 +56,7 @@ const TextContainer = styled.div`
 const Title = styled.h2`
   font-size: ${(props) => props.theme.fontSizes.xl};
   font-weight: normal;
-  margin: ${(props) => props.theme.spacings.s} 0
-    ${(props) => props.theme.spacings.m} 0;
+  margin: 0 0 ${(props) => props.theme.spacings.m} 0;
 `
 const Subtitle = styled.p`
   font-size: ${(props) => props.theme.fontSizes.s};
@@ -72,7 +71,11 @@ const ProjectTypeInfo = styled.span`
 const Description = styled.p`
   margin: 0 0 ${(props) => props.theme.spacings.m} 0;
 `
-const TechContainer = styled.div``
+const TechContainer = styled.div`
+  display: flex;
+  gap: 0.5rem 1rem;
+  flex-wrap: wrap;
+`
 
 export default function ProjectCard(props: Project) {
   const dateFormatOptions: Intl.DateTimeFormatOptions = {
@@ -94,7 +97,7 @@ export default function ProjectCard(props: Project) {
             ' - ' +
             props.endDate.toLocaleString('en-US', dateFormatOptions)}
         </Subtitle>
-        <Description>{props.description}</Description>
+        <Description>{props.description} </Description>
         <TechContainer>
           {props.techStack.map((techItem) => (
             <Chip key={techItem}>{techItem}</Chip>

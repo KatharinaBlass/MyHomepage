@@ -22,10 +22,10 @@ const Profile = styled.picture`
     min-width: 50%;
     height: 600px;
     max-width: 900px;
-    padding-left: ${(props) => props.theme.spacings.l};
+    padding-left: ${(props) => props.theme.spacings.xl};
 
     @media (min-width: 1400px) {
-      padding-left: ${(props) => props.theme.spacings.xl};
+      padding-left: ${(props) => props.theme.spacings.xxl};
     }
   }
 

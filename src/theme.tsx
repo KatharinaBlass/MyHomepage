@@ -4,6 +4,7 @@ export const theme: DefaultTheme = {
   colors: {
     primary: '#33a8c5',
     primaryDark: '#243D8D',
+    onPrimary: '#f8f8fa',
     background: '#f8f8fa',
     background_transparent: '#f8f8fadd',
     text: '#111',
@@ -21,7 +22,8 @@ export const theme: DefaultTheme = {
     xs: '0.2rem',
     s: '0.5rem',
     m: '1rem',
-    l: '2rem',
-    xl: '5rem',
+    l: '1.5rem',
+    xl: '2rem',
+    xxl: '5rem',
   },
 }
