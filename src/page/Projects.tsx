@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import ProjectCard, { Project, ProjectType } from '../components/ProjectCard'
+import EverGuideImage from '../graphics/projects/everGuide.png'
 
 const ProjectsContent = styled.div`
   display: flex;
@@ -23,6 +24,7 @@ const allProjects: Project[] = [
     techStack: ['Kotlin', 'WCAG 2.2', 'user testing', 'Figma'],
     startDate: new Date(2023, 3, 1),
     endDate: new Date(2023, 10, 23),
+    imageSrc: EverGuideImage,
     githubLink: 'https://github.com/KatharinaBlass/MA-code',
     subpageName: 'everGuide',
   },

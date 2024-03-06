@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import Chip from './Chip'
 import mockImg from '../graphics/projects/PlaceholderImage.png'
-import Button, { ButtonType } from './Button'
 import { ReactComponent as ArrowRightIcon } from '../graphics/icons/arrow_forward-24.svg'
 
 export enum ProjectType {
@@ -18,6 +17,7 @@ export type Project = {
   techStack: string[]
   startDate: Date
   endDate: Date
+  imageSrc: string
   githubLink?: string
   deployLink?: string
   subpageName?: string
@@ -41,19 +41,19 @@ const Card = styled.div`
 const ProjectImage = styled.img`
   flex: 1;
   margin: 0;
-  margin-bottom: ${(props) => props.theme.spacings.s};
+  margin-bottom: ${(props) => props.theme.spacings.m};
   width: 100%;
 
   @media (min-width: 600px) and (max-width: 800px) {
     max-width: 300px;
     width: 35%;
-    margin-right: ${(props) => props.theme.spacings.m};
+    margin-right: ${(props) => props.theme.spacings.l};
     margin-bottom: 0;
   }
 
   @media (min-width: 800px) {
     height: 100%;
-    margin-right: ${(props) => props.theme.spacings.m};
+    margin-right: ${(props) => props.theme.spacings.l};
     margin-bottom: 0;
   }
 `
@@ -111,7 +111,7 @@ export default function ProjectCard(props: Project) {
 
   return (
     <Card>
-      <ProjectImage src={mockImg} alt=""></ProjectImage>
+      <ProjectImage src={props.imageSrc} width="300px" alt=""></ProjectImage>
       <TextContainer>
         <Title>{props.title}</Title>
         <Subtitle>
