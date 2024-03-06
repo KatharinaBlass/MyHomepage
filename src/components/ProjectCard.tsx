@@ -36,17 +36,22 @@ const Card = styled.div`
   }
 `
 const ProjectImage = styled.img`
-  max-height: 300px;
   flex: 1;
   margin: 0;
   margin-bottom: ${(props) => props.theme.spacings.s};
-  max-width: 100%;
+  width: 100%;
 
-  @media (min-width: 600px) {
+  @media (min-width: 600px) and (max-width: 800px) {
     max-width: 300px;
     width: 35%;
-    margin: 0;
     margin-right: ${(props) => props.theme.spacings.m};
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 800px) {
+    height: 100%;
+    margin-right: ${(props) => props.theme.spacings.m};
+    margin-bottom: 0;
   }
 `
 const TextContainer = styled.div`
