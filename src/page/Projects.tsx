@@ -24,6 +24,7 @@ const allProjects: Project[] = [
     startDate: new Date(2023, 3, 1),
     endDate: new Date(2023, 10, 23),
     githubLink: 'https://github.com/KatharinaBlass/MA-code',
+    subpageName: 'everGuide',
   },
 ]
 

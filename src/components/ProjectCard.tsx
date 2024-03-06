@@ -20,6 +20,7 @@ export type Project = {
   endDate: Date
   githubLink?: string
   deployLink?: string
+  subpageName?: string
 }
 
 const Card = styled.div`
@@ -59,15 +60,16 @@ const ProjectImage = styled.img`
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
+  gap: ${(props) => props.theme.spacings.m};
 `
 const Title = styled.h2`
   font-size: ${(props) => props.theme.fontSizes.xl};
   font-weight: normal;
-  margin: 0 0 ${(props) => props.theme.spacings.m} 0;
+  margin: 0;
 `
 const Subtitle = styled.p`
   font-size: ${(props) => props.theme.fontSizes.s};
-  margin: 0 0 ${(props) => props.theme.spacings.m} 0;
+  margin: 0;
 `
 const ProjectTypeInfo = styled.span`
   font-size: inherit;
@@ -82,7 +84,23 @@ const TechContainer = styled.div`
   display: flex;
   gap: 0.5rem 1rem;
   flex-wrap: wrap;
-  margin: 0 0 ${(props) => props.theme.spacings.m} 0;
+`
+const DetailsLink = styled.a`
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+  color: ${(props) => props.theme.colors.primaryDark};
+  font-weight: 600;
+
+  &:hover {
+    filter: brightness(1.35);
+  }
+
+  &:active {
+    filter: brightness(0.65);
+  }
 `
 
 export default function ProjectCard(props: Project) {
@@ -111,13 +129,11 @@ export default function ProjectCard(props: Project) {
           ))}
         </TechContainer>
         <Description>{props.description} </Description>
-        <Button
-          type={ButtonType.Text}
-          onClickHandler={() => {}}
-          traillingIcon={ArrowRightIcon}
-        >
-          Read more
-        </Button>
+        {props.subpageName && (
+          <DetailsLink href={`./projects/${props.subpageName}`}>
+            Read more <ArrowRightIcon />
+          </DetailsLink>
+        )}
       </TextContainer>
     </Card>
   )
