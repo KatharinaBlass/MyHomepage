@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import Chip from './Chip'
 import mockImg from '../graphics/projects/PlaceholderImage.png'
 import { ReactComponent as ArrowRightIcon } from '../graphics/icons/arrow_forward-24.svg'
+import ResponsiveProjectImage from './ResponsiveProjectImage'
 
 export enum ProjectType {
   design = 'Design',
@@ -17,7 +18,8 @@ export type Project = {
   techStack: string[]
   startDate: Date
   endDate: Date
-  imageSrc: string
+  imageFolderName: string
+  imageAltText: string
   githubLink?: string
   deployLink?: string
   subpageName?: string
@@ -33,28 +35,18 @@ const Card = styled.div`
   flex-direction: column;
   align-items: center;
   margin: ${(props) => props.theme.spacings.m};
+  gap: ${(props) => props.theme.spacings.m};
 
   @media (min-width: 600px) {
     flex-direction: row;
+    gap: ${(props) => props.theme.spacings.l};
   }
 `
-const ProjectImage = styled.img`
-  flex: 1;
-  margin: 0;
-  margin-bottom: ${(props) => props.theme.spacings.m};
+const ProjectImage = styled(ResponsiveProjectImage)`
   width: 100%;
 
-  @media (min-width: 600px) and (max-width: 800px) {
-    max-width: 300px;
-    width: 35%;
-    margin-right: ${(props) => props.theme.spacings.l};
-    margin-bottom: 0;
-  }
-
-  @media (min-width: 800px) {
-    height: 100%;
-    margin-right: ${(props) => props.theme.spacings.l};
-    margin-bottom: 0;
+  @media (min-width: 600px) {
+    min-width: 45%;
   }
 `
 const TextContainer = styled.div`
@@ -111,7 +103,10 @@ export default function ProjectCard(props: Project) {
 
   return (
     <Card>
-      <ProjectImage src={props.imageSrc} width="300px" alt=""></ProjectImage>
+      <ProjectImage
+        folderURL={props.imageFolderName}
+        altText={props.imageAltText}
+      ></ProjectImage>
       <TextContainer>
         <Title>{props.title}</Title>
         <Subtitle>
