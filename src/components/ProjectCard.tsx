@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import Chip from './Chip'
 import mockImg from '../graphics/projects/PlaceholderImage.png'
+import Button, { ButtonType } from './Button'
+import { ReactComponent as ArrowRightIcon } from '../graphics/icons/arrow_forward-24.svg'
 
 export enum ProjectType {
   design = 'Design',
@@ -74,12 +76,13 @@ const ProjectTypeInfo = styled.span`
   background-color: ${(props) => `${props.theme.colors.primary}33`};
 `
 const Description = styled.p`
-  margin: 0 0 ${(props) => props.theme.spacings.m} 0;
+  margin: 0;
 `
 const TechContainer = styled.div`
   display: flex;
   gap: 0.5rem 1rem;
   flex-wrap: wrap;
+  margin: 0 0 ${(props) => props.theme.spacings.m} 0;
 `
 
 export default function ProjectCard(props: Project) {
@@ -102,12 +105,19 @@ export default function ProjectCard(props: Project) {
             ' - ' +
             props.endDate.toLocaleString('en-US', dateFormatOptions)}
         </Subtitle>
-        <Description>{props.description} </Description>
         <TechContainer>
           {props.techStack.map((techItem) => (
             <Chip key={techItem}>{techItem}</Chip>
           ))}
         </TechContainer>
+        <Description>{props.description} </Description>
+        <Button
+          type={ButtonType.Text}
+          onClickHandler={() => {}}
+          traillingIcon={ArrowRightIcon}
+        >
+          Read more
+        </Button>
       </TextContainer>
     </Card>
   )

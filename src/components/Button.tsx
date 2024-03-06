@@ -5,6 +5,7 @@ type ButtonProps = {
   type: ButtonType
   onClickHandler: () => void
   leadingIcon?: React.FC<React.SVGProps<SVGSVGElement>>
+  traillingIcon?: React.FC<React.SVGProps<SVGSVGElement>>
 }
 export enum ButtonType {
   Primary,
@@ -93,30 +94,23 @@ const TextButton = styled(BaseButton)`
 `
 
 export default function Button(props: ButtonProps) {
+  const ButtonContent = (
+    <>
+      {props.leadingIcon && <props.leadingIcon />}
+      {props.children && <span>{props.children}</span>}
+      {props.traillingIcon && <props.traillingIcon />}
+    </>
+  )
+
   switch (props.type) {
     case ButtonType.Primary:
-      return (
-        <FilledButton>
-          {props.leadingIcon && <props.leadingIcon />}
-          {props.children && <span>{props.children}</span>}
-        </FilledButton>
-      )
+      return <FilledButton>{ButtonContent}</FilledButton>
 
     case ButtonType.Secondary:
-      return (
-        <OutlinedButton>
-          {props.leadingIcon && <props.leadingIcon />}
-          {props.children && <span>{props.children}</span>}
-        </OutlinedButton>
-      )
+      return <OutlinedButton>{ButtonContent}</OutlinedButton>
 
     case ButtonType.Text:
-      return (
-        <TextButton>
-          {props.leadingIcon && <props.leadingIcon />}
-          {props.children && <span>{props.children}</span>}
-        </TextButton>
-      )
+      return <TextButton>{ButtonContent}</TextButton>
     default:
       return <button>{props.children}</button>
   }
