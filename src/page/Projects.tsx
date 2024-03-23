@@ -40,6 +40,7 @@ const allProjects: Project[] = [
     startDate: new Date(2022, 9, 1),
     endDate: new Date(2023, 2, 31),
     imageAltText: '',
+    githubLink: 'https://github.com/JonasFisch/DinnerNightProject',
   },
   {
     title: 'Bubble Bobble Reloaded',
@@ -50,6 +51,7 @@ const allProjects: Project[] = [
     startDate: new Date(2022, 9, 1),
     endDate: new Date(2023, 1, 10),
     imageAltText: '',
+    githubLink: 'https://github.com/m2-retro-mmo/bubble-bobble',
     readMoreLink:
       'https://showtime.f4.htw-berlin.de/ws22/master/m2-mmo-bubble-bobble/',
   },
@@ -62,6 +64,7 @@ const allProjects: Project[] = [
     startDate: new Date(2021, 9, 1),
     endDate: new Date(2022, 1, 10),
     imageAltText: '',
+    githubLink: 'https://github.com/HTW-iBKM/frontend',
     readMoreLink:
       'https://showtime.f4.htw-berlin.de/ws21/master/m3-intelligentes-bilanzkreismanagement/',
   },
