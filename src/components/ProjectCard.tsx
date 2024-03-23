@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import Chip from './Chip'
 import mockImg from '../graphics/projects/PlaceholderImage.png'
 import { ReactComponent as ArrowRightIcon } from '../graphics/icons/arrow_forward-24.svg'
+import { ReactComponent as GithubMark } from '../graphics/icons/github-mark.svg'
 import ResponsiveProjectImage from './ResponsiveProjectImage'
 
 export enum ProjectType {
@@ -77,14 +78,13 @@ const TechContainer = styled.div`
   gap: 0.5rem 1rem;
   flex-wrap: wrap;
 `
-const DetailsLink = styled.a`
-  align-items: center;
+const LinkContainer = styled.div`
   display: flex;
-  gap: 0.5rem;
+  justify-content: space-between;
+`
+const IconLink = styled.a`
   text-decoration: none;
-  font-size: 1rem;
   color: ${(props) => props.theme.colors.primaryDark};
-  font-weight: 600;
 
   &:hover {
     filter: brightness(1.35);
@@ -93,6 +93,18 @@ const DetailsLink = styled.a`
   &:active {
     filter: brightness(0.65);
   }
+`
+const DetailsLink = styled(IconLink)`
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+`
+const GithubIcon = styled(GithubMark)`
+  height: 2rem;
+  width: 2rem;
+  vertical-align: middle;
 `
 
 export default function ProjectCard(props: Project) {
@@ -124,11 +136,18 @@ export default function ProjectCard(props: Project) {
           ))}
         </TechContainer>
         <Description>{props.description} </Description>
-        {props.subpageName && (
-          <DetailsLink href={`./projects/${props.subpageName}`}>
-            Read more <ArrowRightIcon />
-          </DetailsLink>
-        )}
+        <LinkContainer>
+          {props.subpageName && (
+            <DetailsLink href={`./projects/${props.subpageName}`}>
+              Read more <ArrowRightIcon />
+            </DetailsLink>
+          )}
+          {props.githubLink && (
+            <IconLink href={props.githubLink} target="_blank">
+              <GithubIcon />
+            </IconLink>
+          )}
+        </LinkContainer>
       </TextContainer>
     </Card>
   )
