@@ -21,7 +21,7 @@ export type Project = {
   techStack: string[]
   startDate: Date
   endDate: Date
-  imageFolderName: string
+  imageFolderName?: string
   imageAltText: string
   githubLink?: string
   deployLink?: string

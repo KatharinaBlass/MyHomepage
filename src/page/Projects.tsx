@@ -11,11 +11,12 @@ const ProjectsContent = styled.div`
 `
 const SectionTitle = styled.h1`
   font-size: ${(props) => props.theme.fontSizes.xxl};
+  margin-bottom: ${(props) => props.theme.spacings.xl};
 `
 const ProjectLayoutContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 2.75rem;
 `
 
 const allProjects: Project[] = [
@@ -38,7 +39,6 @@ const allProjects: Project[] = [
     techStack: ['React Native', 'Google Firebase', 'Figma'],
     startDate: new Date(2022, 9, 1),
     endDate: new Date(2023, 2, 31),
-    imageFolderName: 'everGuide',
     imageAltText: '',
   },
 ]
