@@ -22,7 +22,7 @@ const TextContainer = styled.div`
 `
 const Headline = styled.span`
   font-size: ${(props) => props.theme.fontSizes.xxl};
-  font-weight: bold;
+  font-weight: normal;
 
   @media (min-width: 900px) {
     font-size: ${(props) => props.theme.fontSizes.xxxl};
@@ -36,8 +36,12 @@ const HelloText = styled(Headline)`
   }
 `
 const NameText = styled(Headline)`
-  color: ${(props) => props.theme.colors.primary};
   display: inline-block;
+  font-weight: bold;
+  color: ${(props) => props.theme.colors.text};
+  background-color: ${(props) => `${props.theme.colors.primaryDark}33`};
+  margin: 0 -8px;
+  padding: 0 8px;
 `
 const ProfessionText = styled(Headline)`
   display: block;

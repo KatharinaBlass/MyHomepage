@@ -34,6 +34,7 @@ const NavigationItem = styled.a<{ $isActive: boolean }>`
   text-decoration: none;
   color: ${(props) =>
     props.$isActive ? props.theme.colors.primary : props.theme.colors.text};
+  font-weight: ${(props) => (props.$isActive ? 600 : 'normal')};
 `
 
 export default function Navigation({ items }: { items: NavigationItemData[] }) {

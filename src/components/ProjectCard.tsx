@@ -70,7 +70,9 @@ const ProjectTypeInfo = styled.span`
   font-size: inherit;
   font-weight: bold;
   color: ${(props) => props.theme.colors.text};
-  background-color: ${(props) => `${props.theme.colors.primary}33`};
+  background-color: ${(props) => `${props.theme.colors.primaryDark}33`};
+  margin-left: -2px;
+  padding: 0 2px;
 `
 const Description = styled.p`
   margin: 0;
