@@ -18,16 +18,13 @@ const allProjects: Project[] = [
   {
     title: 'Accessible everGuide app',
     description:
-      "As part of my master's thesis, I worked with the Fraunhofer Institute to develop an accessible version of their indoor navigation app everGuide for Android and tested it with visually impaired users.",
+      "As part of my Master's thesis, I worked with the Fraunhofer Institute to develop an accessible version of their indoor navigation app everGuide for Android. This involved optimising for assistive technologies, applying the WCAG 2.2 standard at level AA+, and conducting interviews and tests with visually impaired users.",
     typeDeclarations: [ProjectType.design, ProjectType.mobile],
     techStack: ['Kotlin', 'WCAG 2.2', 'UX Research', 'Figma'],
     startDate: new Date(2023, 3, 1),
     endDate: new Date(2023, 10, 23),
     imageFolderName: 'everGuide',
     imageAltText: '',
-    githubLink: 'https://github.com/KatharinaBlass/MA-code',
-    deployLink: 'google.de',
-    subpageName: 'everGuide',
   },
 ]
 
