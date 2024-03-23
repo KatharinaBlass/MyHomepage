@@ -25,7 +25,7 @@ export type Project = {
   imageAltText: string
   githubLink?: string
   deployLink?: string
-  subpageName?: string
+  readMoreLink?: string
 }
 
 const Card = styled.div`
@@ -152,8 +152,8 @@ export default function ProjectCard(props: Project) {
         </TechContainer>
         <Description>{props.description} </Description>
         <LinkContainer>
-          {props.subpageName && (
-            <DetailsLink href={`./projects/${props.subpageName}`}>
+          {props.readMoreLink && (
+            <DetailsLink href={props.readMoreLink} target="_blank">
               Read more <ArrowRightIcon />
             </DetailsLink>
           )}

@@ -19,6 +19,10 @@ const HomeContent = styled.div`
 `
 const TextContainer = styled.div`
   max-width: 800px;
+
+  @media (max-width: 900px) {
+    margin-top: ${(props) => props.theme.spacings.m};
+  }
 `
 const Headline = styled.span`
   font-size: ${(props) => props.theme.fontSizes.xxl};
