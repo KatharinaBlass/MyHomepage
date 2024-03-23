@@ -3,6 +3,8 @@ import Chip from './Chip'
 import mockImg from '../graphics/projects/PlaceholderImage.png'
 import { ReactComponent as ArrowRightIcon } from '../graphics/icons/arrow_forward-24.svg'
 import { ReactComponent as GithubMark } from '../graphics/icons/github-mark.svg'
+import { ReactComponent as PlayIcon } from '../graphics/icons/play_circle_24.svg'
+import { ReactComponent as RocketIcon } from '../graphics/icons/rocket_launch_24.svg'
 import ResponsiveProjectImage from './ResponsiveProjectImage'
 
 export enum ProjectType {
@@ -38,7 +40,7 @@ const Card = styled.div`
   margin: ${(props) => props.theme.spacings.m};
   gap: ${(props) => props.theme.spacings.m};
 
-  @media (min-width: 600px) {
+  @media (min-width: 700px) {
     flex-direction: row;
     gap: ${(props) => props.theme.spacings.l};
   }
@@ -46,7 +48,7 @@ const Card = styled.div`
 const ProjectImage = styled(ResponsiveProjectImage)`
   width: 100%;
 
-  @media (min-width: 600px) {
+  @media (min-width: 700px) {
     min-width: 45%;
   }
 `
@@ -82,7 +84,16 @@ const LinkContainer = styled.div`
   display: flex;
   justify-content: space-between;
 `
-const IconLink = styled.a`
+const ExternalLinkContainer = styled.div`
+  display: flex;
+  gap: ${(props) => props.theme.spacings.l};
+`
+const DetailsLink = styled.a`
+  align-items: center;
+  display: flex;
+  gap: ${(props) => props.theme.spacings.s};
+  font-size: ${(props) => props.theme.fontSizes.m};
+  font-weight: 600;
   text-decoration: none;
   color: ${(props) => props.theme.colors.primaryDark};
 
@@ -94,16 +105,19 @@ const IconLink = styled.a`
     filter: brightness(0.65);
   }
 `
-const DetailsLink = styled(IconLink)`
-  align-items: center;
-  display: flex;
-  gap: 0.5rem;
-  font-size: 1rem;
-  font-weight: 600;
+const IconLink = styled.a`
+  color: ${(props) => props.theme.colors.text};
+
+  &:hover {
+    filter: brightness(3.5);
+  }
 `
 const GithubIcon = styled(GithubMark)`
-  height: 2rem;
-  width: 2rem;
+  width: ${(props) => props.theme.fontSizes.xxl};
+  vertical-align: middle;
+`
+const DeployIcon = styled(RocketIcon)`
+  width: ${(props) => props.theme.fontSizes.xxl};
   vertical-align: middle;
 `
 
@@ -142,11 +156,18 @@ export default function ProjectCard(props: Project) {
               Read more <ArrowRightIcon />
             </DetailsLink>
           )}
-          {props.githubLink && (
-            <IconLink href={props.githubLink} target="_blank">
-              <GithubIcon />
-            </IconLink>
-          )}
+          <ExternalLinkContainer>
+            {props.deployLink && (
+              <IconLink href={props.deployLink} target="_blank">
+                <DeployIcon />
+              </IconLink>
+            )}
+            {props.githubLink && (
+              <IconLink href={props.githubLink} target="_blank">
+                <GithubIcon />
+              </IconLink>
+            )}
+          </ExternalLinkContainer>
         </LinkContainer>
       </TextContainer>
     </Card>

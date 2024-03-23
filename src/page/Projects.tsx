@@ -26,6 +26,7 @@ const allProjects: Project[] = [
     imageFolderName: 'everGuide',
     imageAltText: '',
     githubLink: 'https://github.com/KatharinaBlass/MA-code',
+    deployLink: 'google.de',
     subpageName: 'everGuide',
   },
 ]
