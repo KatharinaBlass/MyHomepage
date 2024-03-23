@@ -12,7 +12,11 @@ const ProjectsContent = styled.div`
 const SectionTitle = styled.h1`
   font-size: ${(props) => props.theme.fontSizes.xxl};
 `
-const ProjectLayoutContainer = styled.div``
+const ProjectLayoutContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+`
 
 const allProjects: Project[] = [
   {

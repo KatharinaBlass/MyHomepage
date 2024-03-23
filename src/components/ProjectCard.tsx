@@ -32,12 +32,11 @@ const Card = styled.div`
   padding: ${(props) => props.theme.spacings.l};
   border: 1px solid ${(props) => props.theme.colors.text};
   border-radius: 8px;
-  box-shadow: 6px 6px 0px 0px ${(props) => `${props.theme.colors.primary}55`};
-  max-width: 800px;
+  box-shadow: 8px 8px 0px 0px ${(props) => `${props.theme.colors.primary}55`};
+  max-width: 900px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: ${(props) => props.theme.spacings.m};
   gap: ${(props) => props.theme.spacings.m};
 
   @media (min-width: 700px) {
