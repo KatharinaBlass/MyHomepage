@@ -40,6 +40,7 @@ const allProjects: Project[] = [
     startDate: new Date(2022, 9, 1),
     endDate: new Date(2023, 2, 31),
     imageAltText: '',
+    imageFolderName: 'dinnerPlanner',
     githubLink: 'https://github.com/JonasFisch/DinnerNightProject',
   },
   {
