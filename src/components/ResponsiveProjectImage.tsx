@@ -7,8 +7,10 @@ const ProjectPicture = styled.picture`
 `
 
 const Image = styled.img`
+  width: 100%;
   max-width: 100%;
   max-height: 100%;
+  border-radius: 8px;
 `
 
 type ResponsiveProjectImageProps = {

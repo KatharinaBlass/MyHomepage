@@ -52,6 +52,7 @@ const allProjects: Project[] = [
     startDate: new Date(2022, 9, 1),
     endDate: new Date(2023, 1, 10),
     imageAltText: '',
+    imageFolderName: 'bubbleBobble',
     githubLink: 'https://github.com/m2-retro-mmo/bubble-bobble',
     readMoreLink:
       'https://showtime.f4.htw-berlin.de/ws22/master/m2-mmo-bubble-bobble/',
