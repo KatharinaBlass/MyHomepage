@@ -14,7 +14,7 @@ const AppContent = styled.div`
   padding: 0 ${(props) => props.theme.spacings.m};
 
   @media (min-width: 600px) {
-    padding: 0 ${(props) => props.theme.spacings.l};
+    padding: 0 ${(props) => props.theme.spacings.xl};
   }
 `
 

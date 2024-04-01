@@ -7,7 +7,7 @@ const WorkContent = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding-top: ${(props) => props.theme.spacings.l};
+  padding-top: ${(props) => props.theme.spacings.xl};
 `
 const SectionTitle = styled.h1`
   font-size: ${(props) => props.theme.fontSizes.xxl};

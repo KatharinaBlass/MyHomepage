@@ -13,6 +13,7 @@ declare module 'styled-components' {
 type ThemeColors = {
   primary: string
   primaryDark: string
+  onPrimary: string
   background: string
   background_transparent: string
   text: string
@@ -29,8 +30,10 @@ type ThemeFonts = {
 }
 
 type ThemeSpaces = {
+  xs: string
   s: string
   m: string
   l: string
   xl: string
+  xxl: string
 }

@@ -14,15 +14,19 @@ const HomeContent = styled.div`
   }
 
   @media (min-width: 450px) {
-    padding-top: ${(props) => props.theme.spacings.l};
+    padding-top: ${(props) => props.theme.spacings.xl};
   }
 `
 const TextContainer = styled.div`
   max-width: 800px;
+
+  @media (max-width: 900px) {
+    margin-top: ${(props) => props.theme.spacings.m};
+  }
 `
 const Headline = styled.span`
   font-size: ${(props) => props.theme.fontSizes.xxl};
-  font-weight: bold;
+  font-weight: normal;
 
   @media (min-width: 900px) {
     font-size: ${(props) => props.theme.fontSizes.xxxl};
@@ -36,8 +40,12 @@ const HelloText = styled(Headline)`
   }
 `
 const NameText = styled(Headline)`
-  color: ${(props) => props.theme.colors.primary};
   display: inline-block;
+  font-weight: bold;
+  color: ${(props) => props.theme.colors.text};
+  background-color: ${(props) => `${props.theme.colors.primaryDark}33`};
+  margin: 0 -8px;
+  padding: 0 8px;
 `
 const ProfessionText = styled(Headline)`
   display: block;
