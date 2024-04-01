@@ -66,6 +66,7 @@ const allProjects: Project[] = [
     startDate: new Date(2021, 9, 1),
     endDate: new Date(2022, 1, 10),
     imageAltText: '',
+    imageFolderName: 'ibkm',
     githubLink: 'https://github.com/HTW-iBKM/frontend',
     readMoreLink:
       'https://showtime.f4.htw-berlin.de/ws21/master/m3-intelligentes-bilanzkreismanagement/',
