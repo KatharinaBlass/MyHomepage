@@ -16,7 +16,7 @@ const SectionTitle = styled.h1`
 const ProjectLayoutContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2.75rem;
+  gap: 3.5rem;
 `
 
 const allProjects: Project[] = [
