@@ -76,7 +76,7 @@ const Description = styled.p`
 `
 const TechContainer = styled.div`
   display: flex;
-  gap: 0.5rem 1rem;
+  gap: 0.5rem;
   flex-wrap: wrap;
 `
 const LinkContainer = styled.div`

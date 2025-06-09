@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Chip from './Chip'
 
 const ItemLayoutWrapper = styled.div`
   display: flex;
@@ -74,6 +75,12 @@ const Line = styled.span<{ $accentColor: string }>`
   left: 50%;
   transform: translateX(-50%);
 `
+const TagWrapper = styled.div`
+  margin-top: ${(props) => props.theme.spacings.s};
+  display: flex;
+  gap: ${(props) => props.theme.spacings.s};
+  flex-wrap: wrap;
+`
 
 export type TimelineItemType = {
   title: string
@@ -83,6 +90,7 @@ export type TimelineItemType = {
   degree?: string
   grade?: number
   description?: string
+  tags?: string[]
 }
 
 export default function TimelineItem(
@@ -108,6 +116,13 @@ export default function TimelineItem(
           {props.grade && <span> - Grade: {props.grade.toFixed(1)}</span>}
         </Subtitle>
         {props.description && <Description>{props.description}</Description>}
+        {props.tags && (
+          <TagWrapper>
+            {props.tags.map((tag) => (
+              <Chip>{tag}</Chip>
+            ))}
+          </TagWrapper>
+        )}
       </InfoWrapper>
     </ItemLayoutWrapper>
   )
