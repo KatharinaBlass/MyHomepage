@@ -114,5 +114,5 @@ export default function TimelineItem(
 }
 
 function formatDate(date: Date) {
-  return date.getMonth() + 1 + '/' + date.getFullYear()
+  return date.getMonth() + '/' + date.getFullYear()
 }
