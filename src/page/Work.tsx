@@ -15,20 +15,20 @@ const SectionTitle = styled.h1`
 
 const workCareer: TimelineItemType[] = [
   {
-    organizationName: 'neXenio Gmbh',
+    organizationName: 'neXenio',
     title: 'Junior Software Engineer',
     start: new Date(2020, 3, 1),
     end: new Date(2020, 9, 30),
     description:
-      'As part of the agile Bdrive front-end web team, I worked on implementing new features within my own milestone using React, Redux and Typescript, and participated in scrum meetings and sprint planning.',
+      "After starting as a working student, I transitioned into a Junior Software Engineer role within the Bdrive frontend team. My responsibilities included end-to-end implementation of major new features, with a particular focus on user experience and security. I also actively participated in the team's agile ceremonies and contributed to knowledge-sharing sessions.",
   },
   {
-    organizationName: 'neXenio Gmbh',
+    organizationName: 'neXenio',
     title: 'Working student',
     start: new Date(2019, 11, 1),
     end: new Date(2020, 2, 29),
     description:
-      'As part of the agile Bdrive frontend web team, I implemented new features using React, Redux and Typescript, as well as maintaining and debugging existing parts of the system.',
+      'As part of the Bdrive frontend team, I contributed to the development of new features using React, Redux, and TypeScript, while also maintaining and improving existing components. During my onboarding, I was introduced to agile methodologies and participated test-driven pair programming sessions.',
   },
   {
     organizationName: 'HPI Schul-Cloud',
@@ -36,7 +36,7 @@ const workCareer: TimelineItemType[] = [
     start: new Date(2018, 8, 1),
     end: new Date(2019, 1, 28),
     description:
-      "In my first front-end web development role, I implemented small features using HTML, SCSS and JavaScript, and redesigned the application's help page using AdobeXD with a team member.",
+      "In my first role as a Frontend Web Developer, I gained hands-on experience with the fundamentals of HTML, SCSS, and JavaScript and supported a colleague in redesigning the application's help page using AdobeXD.",
   },
 ]
 
