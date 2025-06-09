@@ -15,6 +15,14 @@ const SectionTitle = styled.h1`
 
 const workCareer: TimelineItemType[] = [
   {
+    organizationName: 'Netlight Consulting',
+    title: 'IT Consultant',
+    start: new Date(2024, 4, 1),
+    end: null,
+    description:
+      "As IT Consultant at Netlight, I support clients in realizing their IT solutions—not only as a strategic advisor, but as a hands-on contributor embedded within their teams. While my primary technical focus is frontend engineering using React and TypeScript, I also contribute to other areas such as CI/CD, DevOps, authentication, UX design, and accessibility, depending on the client's needs. Beyond technical delivery, I also support the upskilling of the client's internal developers as well as foster improved communication and collaboration both within my team and across departments.",
+  },
+  {
     organizationName: 'neXenio',
     title: 'Junior Software Engineer',
     start: new Date(2020, 3, 1),
