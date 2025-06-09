@@ -23,8 +23,8 @@ const MobileDateRange = styled.p`
   }
 `
 const InfoWrapper = styled.div`
-  padding: ${(props) => props.theme.spacings.m} 0;
-  max-width: 600px;
+  padding: ${(props) => props.theme.spacings.l} 0;
+  max-width: 700px;
 `
 const Title = styled.p`
   margin: ${(props) => props.theme.spacings.s} 0;
@@ -76,7 +76,7 @@ const Line = styled.span<{ $accentColor: string }>`
   transform: translateX(-50%);
 `
 const TagWrapper = styled.div`
-  margin-top: ${(props) => props.theme.spacings.s};
+  margin-top: ${(props) => props.theme.spacings.m};
   display: flex;
   gap: ${(props) => props.theme.spacings.s};
   flex-wrap: wrap;

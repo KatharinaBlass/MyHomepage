@@ -6,11 +6,12 @@ const WorkContent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
   padding-top: ${(props) => props.theme.spacings.xl};
 `
 const SectionTitle = styled.h1`
   font-size: ${(props) => props.theme.fontSizes.xxl};
+  background-color: ${(props) => `${props.theme.colors.primaryDark}33`};
+  padding: 0 8px;
 `
 
 const workCareer: TimelineItemType[] = [

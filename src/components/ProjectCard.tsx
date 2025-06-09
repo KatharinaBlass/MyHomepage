@@ -31,7 +31,7 @@ const Card = styled.div`
   border: 1px solid ${(props) => props.theme.colors.text};
   border-radius: 8px;
   box-shadow: 8px 8px 0px 0px ${(props) => `${props.theme.colors.primary}55`};
-  max-width: 900px;
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
