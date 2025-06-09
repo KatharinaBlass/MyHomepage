@@ -79,7 +79,7 @@ export type TimelineItemType = {
   title: string
   organizationName: string
   start: Date
-  end: Date
+  end: Date | null
   degree?: string
   grade?: number
   description?: string
@@ -89,7 +89,7 @@ export default function TimelineItem(
   props: TimelineItemType & { bulletColor: string }
 ) {
   const startDate = formatDate(props.start)
-  const endDate = formatDate(props.end)
+  const endDate = props.end ? formatDate(props.end) : 'today'
 
   return (
     <ItemLayoutWrapper>
