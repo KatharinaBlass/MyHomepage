@@ -31,10 +31,10 @@ const NavigationContainer = styled.nav`
 `
 const NavigationItem = styled.a<{ $isActive: boolean }>`
   padding: 0 ${(props) => props.theme.spacings.m};
-  text-decoration: none;
+  text-decoration: ${(props) => (props.$isActive ? 'overline' : 'none')};
   color: ${(props) =>
-    props.$isActive ? props.theme.colors.primary : props.theme.colors.text};
-  font-weight: ${(props) => (props.$isActive ? 600 : 'normal')};
+    props.$isActive ? props.theme.colors.primaryDark : props.theme.colors.text};
+  font-weight: ${(props) => (props.$isActive ? 700 : 'normal')};
 `
 
 export default function Navigation({ items }: { items: NavigationItemData[] }) {

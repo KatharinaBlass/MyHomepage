@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Chip from './Chip'
 
 const ItemLayoutWrapper = styled.div`
   display: flex;
@@ -22,8 +23,8 @@ const MobileDateRange = styled.p`
   }
 `
 const InfoWrapper = styled.div`
-  padding: ${(props) => props.theme.spacings.m} 0;
-  max-width: 600px;
+  padding: ${(props) => props.theme.spacings.l} 0;
+  max-width: 700px;
 `
 const Title = styled.p`
   margin: ${(props) => props.theme.spacings.s} 0;
@@ -74,22 +75,29 @@ const Line = styled.span<{ $accentColor: string }>`
   left: 50%;
   transform: translateX(-50%);
 `
+const TagWrapper = styled.div`
+  margin-top: ${(props) => props.theme.spacings.m};
+  display: flex;
+  gap: ${(props) => props.theme.spacings.s};
+  flex-wrap: wrap;
+`
 
 export type TimelineItemType = {
   title: string
   organizationName: string
   start: Date
-  end: Date
+  end: Date | null
   degree?: string
   grade?: number
   description?: string
+  tags?: string[]
 }
 
 export default function TimelineItem(
   props: TimelineItemType & { bulletColor: string }
 ) {
   const startDate = formatDate(props.start)
-  const endDate = formatDate(props.end)
+  const endDate = props.end ? formatDate(props.end) : 'today'
 
   return (
     <ItemLayoutWrapper>
@@ -108,11 +116,18 @@ export default function TimelineItem(
           {props.grade && <span> - Grade: {props.grade.toFixed(1)}</span>}
         </Subtitle>
         {props.description && <Description>{props.description}</Description>}
+        {props.tags && (
+          <TagWrapper>
+            {props.tags.map((tag) => (
+              <Chip>{tag}</Chip>
+            ))}
+          </TagWrapper>
+        )}
       </InfoWrapper>
     </ItemLayoutWrapper>
   )
 }
 
 function formatDate(date: Date) {
-  return date.getMonth() + 1 + '/' + date.getFullYear()
+  return date.getMonth() + '/' + date.getFullYear()
 }

@@ -31,7 +31,7 @@ const Card = styled.div`
   border: 1px solid ${(props) => props.theme.colors.text};
   border-radius: 8px;
   box-shadow: 8px 8px 0px 0px ${(props) => `${props.theme.colors.primary}55`};
-  max-width: 900px;
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,7 +76,7 @@ const Description = styled.p`
 `
 const TechContainer = styled.div`
   display: flex;
-  gap: 0.5rem 1rem;
+  gap: 0.5rem;
   flex-wrap: wrap;
 `
 const LinkContainer = styled.div`
@@ -151,19 +151,31 @@ export default function ProjectCard(props: Project) {
         <Description>{props.description} </Description>
         <LinkContainer>
           {props.readMoreLink && (
-            <DetailsLink href={props.readMoreLink} target="_blank">
-              Read more <ArrowRightIcon />
+            <DetailsLink
+              href={props.readMoreLink}
+              target="_blank"
+              aria-label="Read more about the project"
+            >
+              Read more <ArrowRightIcon aria-hidden />
             </DetailsLink>
           )}
           <ExternalLinkContainer>
             {props.deployLink && (
-              <IconLink href={props.deployLink} target="_blank">
-                <DeployIcon />
+              <IconLink
+                href={props.deployLink}
+                target="_blank"
+                aria-label="Visit the project's website"
+              >
+                <DeployIcon aria-hidden />
               </IconLink>
             )}
             {props.githubLink && (
-              <IconLink href={props.githubLink} target="_blank">
-                <GithubIcon />
+              <IconLink
+                href={props.githubLink}
+                target="_blank"
+                aria-label="Go to the Github repository"
+              >
+                <GithubIcon aria-hidden />
               </IconLink>
             )}
           </ExternalLinkContainer>

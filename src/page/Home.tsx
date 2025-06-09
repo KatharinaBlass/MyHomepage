@@ -63,12 +63,12 @@ export default function Home({ id }: { id: string }) {
         <h1>
           <HelloText>Hi, I'm</HelloText>
           <NameText>Katharina</NameText>
-          <ProfessionText>A Frontend Developer</ProfessionText>
+          <ProfessionText>A Frontend Engineer</ProfessionText>
         </h1>
         <ProfileText>
-          I love building modern front-end and mobile applications with fun and
-          curiosity. My passion for UX design and accessibility ensures that the
-          products I create are intuitive and accessible to all.
+          I love building modern frontend and mobile applications with fun and
+          curiosity. With a passion for UX design and accessibility, I strive to
+          create intuitive products for everyone.
         </ProfileText>
       </TextContainer>
       <ResponsiveProfileImage />
