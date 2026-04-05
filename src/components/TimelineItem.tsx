@@ -119,7 +119,7 @@ export default function TimelineItem(
         {props.tags && (
           <TagWrapper>
             {props.tags.map((tag) => (
-              <Chip>{tag}</Chip>
+              <Chip key={tag}>{tag}</Chip>
             ))}
           </TagWrapper>
         )}

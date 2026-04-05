@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import Chip from './Chip'
-import { ReactComponent as ArrowRightIcon } from '../graphics/icons/arrow_forward-24.svg'
-import { ReactComponent as GithubMark } from '../graphics/icons/github-mark.svg'
-import { ReactComponent as RocketIcon } from '../graphics/icons/rocket_launch_24.svg'
+import ArrowRightIcon from '../graphics/icons/arrow_forward-24.svg'
+import GithubMark from '../graphics/icons/github-mark.svg'
+import RocketIcon from '../graphics/icons/rocket_launch_24.svg'
 import ResponsiveProjectImage from './ResponsiveProjectImage'
 
 export enum ProjectType {
