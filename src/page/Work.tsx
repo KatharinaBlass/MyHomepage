@@ -37,6 +37,8 @@ const workCareer: TimelineItemType[] = [
       'SWR',
       'MSW',
       'Zod',
+      'REST APIs',
+      'GraphQL',
       'React Hook Form',
       'Vitest',
       'Jest',
@@ -48,6 +50,7 @@ const workCareer: TimelineItemType[] = [
       'Terraform',
       'MSAL.js',
       'Figma',
+      'Claude Code',
     ],
   },
   {
